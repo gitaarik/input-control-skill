@@ -83,7 +83,7 @@ class InputControl(MycroftSkill):
         keyboard.tap('3')
         keyboard.release(Key.cmd_l)
 
-    @intent_handler(IntentBuilder("FourthWorkspaceIntent").require("workspace").require("fourth"))
+    @intent_handler(IntentBuilder("FourthWorkspaceIntent").require("workspace").require("fourth").optionally('move').optionally('to'))
     def handle_fourthworkspace_intent(self, message):
         keyboard.press(Key.cmd_l)
         keyboard.tap('4')
