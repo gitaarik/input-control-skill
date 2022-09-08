@@ -1,3 +1,6 @@
+dependencies:
+  python:
+    - pynput
 
 # This file details all external dependencies required by your skill. If your skill does
 # not require any dependencies, please delete this file before submitting a pull request.

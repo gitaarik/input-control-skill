@@ -1,10 +1,10 @@
 # from mycroft import MycroftSkill, intent_file_handler
 from mycroft import MycroftSkill, intent_handler
 from adapt.intent import IntentBuilder
-# from pynput.mouse import Controller
+from pynput.mouse import Controller
 
 
-# mouse = Controller()
+mouse = Controller()
 
 
 class InputControl(MycroftSkill):
@@ -22,7 +22,7 @@ class InputControl(MycroftSkill):
     def handle_scrolldown_intent(self, message):
         print('scroll down')
         self.speak('scroll down yo')
-        # mouse.scroll(0, -2)
+        mouse.scroll(0, -2)
 
     # @intent_handler(IntentBuilder("ScrollIntent").require("scroll").require("up"))
     # def handle_scrollup_intent(self, message):
