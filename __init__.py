@@ -47,6 +47,48 @@ class InputControl(MycroftSkill):
         keyboard.release(Key.ctrl_l)
         keyboard.release(Key.shift_l)
 
+    @intent_handler(IntentBuilder("FirstTabIntent").require("tab").require("first"))
+    def handle_firsttab_intent(self, message):
+        keyboard.press(Key.ctrl_l)
+        keyboard.tap('1')
+        keyboard.release(Key.ctrl_l)
+
+    @intent_handler(IntentBuilder("SecondTabIntent").require("tab").require("second"))
+    def handle_secontab_intent(self, message):
+        keyboard.press(Key.ctrl_l)
+        keyboard.tap('2')
+        keyboard.release(Key.ctrl_l)
+
+    @intent_handler(IntentBuilder("ThirdTabIntent").require("tab").require("third"))
+    def handle_thirdtab_intent(self, message):
+        keyboard.press(Key.ctrl_l)
+        keyboard.tap('3')
+        keyboard.release(Key.ctrl_l)
+
+    @intent_handler(IntentBuilder("FirstWorkspaceIntent").require("workspace").require("first"))
+    def handle_firstworkspace_intent(self, message):
+        keyboard.press(Key.cmd_l)
+        keyboard.tap('1')
+        keyboard.release(Key.cmd_l)
+
+    @intent_handler(IntentBuilder("SecondWorkspaceIntent").require("workspace").require("second"))
+    def handle_secondworkspace_intent(self, message):
+        keyboard.press(Key.cmd_l)
+        keyboard.tap('2')
+        keyboard.release(Key.cmd_l)
+
+    @intent_handler(IntentBuilder("ThirdWorkspaceIntent").require("workspace").require("third"))
+    def handle_thirdworkspace_intent(self, message):
+        keyboard.press(Key.cmd_l)
+        keyboard.tap('3')
+        keyboard.release(Key.cmd_l)
+
+    @intent_handler(IntentBuilder("FourthWorkspaceIntent").require("workspace").require("fourth"))
+    def handle_fourthworkspace_intent(self, message):
+        keyboard.press(Key.cmd_l)
+        keyboard.tap('4')
+        keyboard.release(Key.cmd_l)
+
 
 def create_skill():
     return InputControl()
