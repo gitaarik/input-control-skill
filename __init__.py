@@ -20,14 +20,14 @@ class InputControl(MycroftSkill):
 
     @intent_handler(IntentBuilder("ScrollIntent").require("scroll").require("down"))
     def handle_scrolldown_intent(self, message):
-        print('scroll down')
+        print('die print die scroll down')
         self.speak('scroll down yo')
         mouse.scroll(0, -2)
 
-    # @intent_handler(IntentBuilder("ScrollIntent").require("scroll").require("up"))
-    # def handle_scrollup_intent(self, message):
-    #     print('scroll up')
-    #     mouse.scroll(0, 2)
+    @intent_handler(IntentBuilder("ScrollIntent").require("scroll").require("up"))
+    def handle_scrollup_intent(self, message):
+        print('die print die scroll up')
+        mouse.scroll(0, 2)
 
 
 def create_skill():
