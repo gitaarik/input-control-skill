@@ -24,11 +24,28 @@ class InputControl(MycroftSkill):
 
     @intent_handler(IntentBuilder("PageDownIntent").require("page").require("down"))
     def handle_pagedown_intent(self, message):
-        keyboard.press(Key.page_down)
+        keyboard.tap(Key.page_down)
 
     @intent_handler(IntentBuilder("PageUpIntent").require("page").require("up"))
     def handle_pageup_intent(self, message):
-        keyboard.press(Key.page_up)
+        keyboard.tap(Key.page_up)
+
+    @intent_handler(IntentBuilder("NextTabIntent").require("tab").require("next"))
+    def handle_nexttab_intent(self, message):
+        keyboard.press(Key.ctrl_l)
+        keyboard.tap(Key.tab)
+        keyboard.release(Key.ctrl_l)
+
+    @intent_handler(IntentBuilder("PrevTabIntent").require("tab").require("previous"))
+    def handle_prevtab_intent(self, message):
+
+        keyboard.press(Key.ctrl_l)
+        keyboard.press(Key.shift_l)
+
+        keyboard.tap(Key.tab)
+
+        keyboard.release(Key.ctrl_l)
+        keyboard.release(Key.shift_l)
 
 
 def create_skill():
